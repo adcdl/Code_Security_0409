@@ -17,7 +17,7 @@ Jamieson O’Reilly 作为 D Vuln 公司的创始人，此前已经多次揭露 
 这种对安全问题的轻慢态度，最终酿成了大祸。一天后，当 O’Reilly 再次检查时，他发现了一个 “令人震惊的配置错误”：”看起来你可以接管系统上的任何账户、任何机器人、任何代理，并在没有任何先前访问权限的情况下完全控制它”。
 
 
-<img width="762" height="934" alt="image" src="https://github.com/user-attachments/assets/ee8b93b6-7bc8-4140-90a3-c6c1a6b4e50f" />
+<img width="762" height="934" alt="image" src="assets/1.png" />
 
 
 
@@ -27,7 +27,7 @@ Moltbook 使用开源数据库软件Supabase，这个选择本身并没有问题
 
 更糟糕的是，Supabase 的 URL 和 publishable key 就直接暴露在 Moltbook 的网站上。根据 O’Reilly 的描述，使用这个 publishable key（Supabase 建议不应用于检索敏感数据），可以看到每个代理的 secret API key、声明令牌、验证码和所有者关系，所有这些都完全无保护地暴露在任何人都可以访问的 URL 上。
 
-<img width="1080" height="872" alt="image" src="https://github.com/user-attachments/assets/6122af54-d051-4bfc-abc0-b2099775e716" />
+<img width="1080" height="872" alt="image" src="assets/2.jpg" />
 
 
 虽然只需两条 SQL 语句就能修复这个漏洞，但 Moltbook 的技术团队显然没有意识到这一点。正如 O’Reilly 所说：”很多这些 vibe coders 和新开发者，甚至一些大公司，都在使用 Supabase。很多 vibe coders 喜欢使用它的原因是因为它全是 GUI 驱动的，所以你不需要连接到数据库并运行 SQL 命令”。这种过度依赖图形界面而忽视底层安全配置的做法，最终导致了灾难性的后果。
